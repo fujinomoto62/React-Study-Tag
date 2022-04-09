@@ -13,7 +13,7 @@ export const UserInformation = () => {
             <li>性別：{user.gender}</li>
             <li>学年：{user.grade}</li>
             <li>所属：{user.belong}</li>
-            <li>タグ：{user.tag}</li>
+            <li>タグ：{user.tag?.join(', ')}</li>
           </ul>
       </>
     );

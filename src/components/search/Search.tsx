@@ -1,34 +1,39 @@
 import React, { Suspense } from "react";
 import { createSearchParams, useNavigate } from "react-router-dom";
-import {Filtering} from './Filtering';
+import { Filtering } from "./Filtering";
 
 export const Search = () => {
   const navigate = useNavigate();
 
-  const handleChange = (e:React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const name: string = e.currentTarget.userName.value;
     const gender: string = e.currentTarget.gender.value;
     const grade: string = e.currentTarget.grade.value;
     const belong: string = e.currentTarget.belong.value;
-    const tag: string = e.currentTarget.tag;
+    const tags: HTMLInputElement[] = e.currentTarget.tag;
 
-    const params = createSearchParams({
+    let checkedTag: string[] = [];
+    tags.forEach((tag) => tag.checked === true && checkedTag.push(tag.value));
+    // console.log(checkedTag);
+
+    let params = createSearchParams({
       name: name,
       gender: gender,
       grade: grade,
       belong: belong,
-      // tag: tag,
-    }).toString()
+    }).toString();
 
-    navigate(`/search/?${params}`, {replace: false});
-    
+    const tagParams = checkedTag ? `&tag=${checkedTag},or` : "&tag=";
+    params += tagParams;
+
+    navigate(`/search/?${params}`, { replace: false });
   };
   return (
     <>
       <h2>検索フォーム</h2>
-      <form onChange={handleChange}>
+      <form onChange={handleChange} name="searchForm">
         <label>
           名前：
           <input type="text" name="userName" />
@@ -67,22 +72,31 @@ export const Search = () => {
           </select>
         </label>
         <br />
-        <label htmlFor="">
-          タグ：（未対応）
-            <input type="checkbox" id="power" name="tag" value="power" />
-            <label htmlFor="power">力仕事</label>
-            <input type="checkbox" id="programming" name="tag" value="programming" />
-            <label htmlFor="programming">コーディング</label>
-            <input type="checkbox" id="circuit" name="tag" value="circuit" />
-            <label htmlFor="circuit">電気回路</label>
-            <input type="checkbox" id="chemistry" name="tag" value="chemistry" />
-            <label htmlFor="chemistry">化学</label>
-            <input type="checkbox" id="physics" name="tag" value="physics" />
-            <label htmlFor="physics">物理</label>
-            <input type="checkbox" id="engineering" name="tag" value="engineering" />
-            <label htmlFor="engineering">工学</label>
-        </label>
+        タグ：
+        <input type="checkbox" id="power" name="tag" value="power" />
+        <label htmlFor="power">力仕事</label>
+        <input
+          type="checkbox"
+          id="programming"
+          name="tag"
+          value="programming"
+        />
+        <label htmlFor="programming">コーディング</label>
+        <input type="checkbox" id="circuit" name="tag" value="circuit" />
+        <label htmlFor="circuit">電気回路</label>
+        <input type="checkbox" id="chemistry" name="tag" value="chemistry" />
+        <label htmlFor="chemistry">化学</label>
+        <input type="checkbox" id="physics" name="tag" value="physics" />
+        <label htmlFor="physics">物理</label>
+        <input
+          type="checkbox"
+          id="engineering"
+          name="tag"
+          value="engineering"
+        />
+        <label htmlFor="engineering">工学</label>
       </form>
+      <h3>注意）タグは”ダブルクリック”で選択</h3>
 
       <Suspense fallback={<h3>Now Searching...</h3>}>
         <Filtering />

@@ -4,6 +4,27 @@ export const About = () => {
   return (
     <>
       <DefaultLayout>
+        4/25
+        <h2>試したこと</h2>
+        <ul>
+          <li>スタイル全般の試し当て</li>
+          <li>and検索の実現</li>
+          <li>ダミーのログイン画面の追加</li>
+          <li>ユーザーをクリックした際の挙動の変更</li>
+          <li>atomic designを用いたコードの整理</li>
+        </ul>
+        <h2>思ったこと</h2>
+        <ul>
+          <li>
+            スタイルを当てるために色々試すのに時間がかかった。最終的にはchakraというUIを提供しているものを使った。
+          </li>
+        </ul>
+        <h2>次回への課題</h2>
+        <ul>
+          <li>タグのデバッグ</li>
+          <li>firebase</li>
+        </ul>
+        <hr />
         4/9
         <h2>試したこと</h2>
         <ul>

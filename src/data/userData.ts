@@ -5,7 +5,7 @@ export const userData = () => {
 };
 
 export const slicedData = (len: number = 0) => {
-  return data.slice(0, len + 10);
+  return data.slice(0, len + 30);
 };
 
 export const searchUser = (id: number) => {

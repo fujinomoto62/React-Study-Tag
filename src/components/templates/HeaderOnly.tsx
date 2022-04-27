@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { Header } from "../atoms/layout/Header";
 
-export const HeaderOnly: FC = (props) => {
+export const HeaderOnly: FC = memo((props) => {
   const { children } = props;
   return (
     <>
@@ -9,4 +9,4 @@ export const HeaderOnly: FC = (props) => {
       {children}
     </>
   );
-};
+});

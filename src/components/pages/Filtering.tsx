@@ -6,6 +6,7 @@ import { SUserCardsContainer, SUserArea } from "../../styled/styled";
 import { User, Tag } from "../../types/userType";
 import { paramsFiltering } from "../../function/paramsFiltering";
 import { UserCard } from "../organisms/UserCard";
+import { UserCards } from "../templates/UserCards";
 
 const filtering = new paramsFiltering();
 
@@ -37,7 +38,7 @@ export const Filtering = () => {
 
   useEffect(() => {
     // let data = copyData;
-    let data: User[] = userData();
+    let data: User[] = copyData;
 
     data = filtering.nameFilter(data, name);
     data = filtering.genderFilter(data, gender);
@@ -62,6 +63,15 @@ export const Filtering = () => {
         hasMore={result.length !== filteredData.length}
         loader={<h2>Now Loading...</h2>}
       >
+
+        {/* いずれはこっちに変えたい。 */}
+        {/* <UserCards
+          inviewedData={result}
+          filteredData={copyData}
+          baseDataLength={copyData.length}
+        /> */}
+
+
         <SUserCardsContainer>
           <SUserArea>
             {filteredData.length > 0 &&
@@ -71,10 +81,9 @@ export const Filtering = () => {
               })}
           </SUserArea>
         </SUserCardsContainer>
+        {}
         {filteredData.length === 0 && <h3>該当する学生が見当たりません</h3>}
       </InfiniteScroll>
     </>
   );
 };
-
-

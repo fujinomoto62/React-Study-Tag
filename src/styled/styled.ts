@@ -135,7 +135,7 @@ outline: none;
 
 export const SRoot = styled.div`
 
-background-color: #f9f8f4;
+/* background-color: #f9f8f4; */
 /* margin: 0; */
 min-height: 100vh;
 

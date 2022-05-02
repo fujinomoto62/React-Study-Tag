@@ -1,4 +1,4 @@
-import { About } from "../components/About";
+import { About } from "../components/pages/About";
 import { Fofpage } from "../components/pages/404page";
 import { Home } from "../components/pages/Home";
 import { List } from "../components/pages/List";

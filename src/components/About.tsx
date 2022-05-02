@@ -1,9 +1,39 @@
-import { DefaultLayout } from "./templates/DefaultLayout";
+import { DefaultLayout } from "./template/DefaultLayout";
 
 export const About = () => {
   return (
     <>
       <DefaultLayout>
+        4/13
+        <h2>試したこと</h2>
+        <ul>
+          <li>コードをatomic designに変更</li>
+          <li>スタイルを少し追加</li>
+          <li>タグ検索をandに変更</li>
+        </ul>
+        <h2>思ったこと</h2>
+        <ul>
+          <li>タグ検索がバグの温床になっている。</li>
+          <li>
+            ページの再読み込みではクエリセレクタが残るため検索結果の表示はされるが
+            検索フォームの選択はすべて初期状態となる。
+          </li>
+          <li>
+            ヘッダーのSEARCHリンクをクリックすると検索フォームの選択は保持されるが、
+            検索結果が消える。
+          </li>
+          <li>タグのcheckboxがダブルクリックしかできない。</li>
+          <li>
+            それぞれの原因はわかっているが、有効な解決策を見つけられていない。
+          </li>
+          <li>一度これらから離れてfirebaseを導入したい。</li>
+        </ul>
+        <h2>次回への課題</h2>
+        <ul>
+          <li>検索フォームの有象無象の解決</li>
+          <li>firebaseの導入</li>
+        </ul>
+        <hr />
         4/9
         <h2>試したこと</h2>
         <ul>

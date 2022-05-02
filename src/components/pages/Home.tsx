@@ -1,5 +1,5 @@
 import { VFC } from "react";
-import { DefaultLayout } from "../templates/DefaultLayout";
+import { DefaultLayout } from "../template/DefaultLayout";
 
 export const Home: VFC = () => {
   return (

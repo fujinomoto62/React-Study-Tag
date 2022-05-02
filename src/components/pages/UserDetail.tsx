@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { SLink } from "../../styled/styled";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
-import { DefaultLayout } from "../templates/DefaultLayout";
+import { DefaultLayout } from "../template/DefaultLayout";
 
 export const UserDetail = () => {
   return (

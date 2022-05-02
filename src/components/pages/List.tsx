@@ -2,10 +2,10 @@ import { useState } from "react";
 import { slicedData, userData } from "../../data/userData";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { UserCard } from "../organisms/UserCard";
-import { HeaderOnly } from "../templates/HeaderOnly";
+import { HeaderOnly } from "../template/HeaderOnly";
 import { SUserCardsContainer, SUserArea } from "../../styled/styled";
 import { Wrap, WrapItem } from "@chakra-ui/react";
-import { UserCards } from "../templates/UserCards";
+import { UserCards } from "../template/UserCards";
 
 export const List = () => {
   const [inviewedData, setInviewedData] = useState(slicedData());

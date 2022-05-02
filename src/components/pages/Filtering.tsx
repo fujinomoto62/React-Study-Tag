@@ -6,7 +6,7 @@ import { SUserCardsContainer, SUserArea } from "../../styled/styled";
 import { User, Tag } from "../../types/userType";
 import { paramsFiltering } from "../../function/paramsFiltering";
 import { UserCard } from "../organisms/UserCard";
-import { UserCards } from "../templates/UserCards";
+import { UserCards } from "../template/UserCards";
 
 const filtering = new paramsFiltering();
 

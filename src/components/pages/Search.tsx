@@ -4,7 +4,7 @@ import { CheckboxForm } from "../molecules/form/CheckboxForm";
 import { InputForm } from "../molecules/form/InputForm";
 import { SelectForm } from "../molecules/form/SelectForm";
 import { Filtering } from "./Filtering";
-import { HeaderOnly } from "../templates/HeaderOnly";
+import { HeaderOnly } from "../template/HeaderOnly";
 import { createParams } from "../../function/createParams";
 
 export const Search = () => {
